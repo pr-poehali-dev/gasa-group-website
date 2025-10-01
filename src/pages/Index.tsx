@@ -415,12 +415,12 @@ const Index = () => {
               <div className="grid grid-cols-2 gap-6">
                 <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4">
                   <Icon name="Award" className="text-accent mb-2" size={32} />
-                  <div className="text-2xl font-bold">15+ лет</div>
+                  <div className="text-2xl font-bold"> 4 года</div>
                   <div className="text-white/70">на рынке</div>
                 </div>
                 <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4">
                   <Icon name="Users" className="text-accent mb-2" size={32} />
-                  <div className="text-2xl font-bold">500+</div>
+                  <div className="text-2xl font-bold">120+</div>
                   <div className="text-white/70">довольных клиентов</div>
                 </div>
               </div>
