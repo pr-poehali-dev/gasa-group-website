@@ -5,60 +5,60 @@ import Icon from '@/components/ui/icon';
 const advantages = [
   {
     icon: 'Users',
-    title: 'Без посредников',
-    description: 'Прямое сотрудничество с застройщиком, экономия до 20%'
+    title: 'Прямое сотрудничество',
+    description: 'Работаем без посредников — экономия до 20% при премиальном качестве'
   },
   {
     icon: 'Award',
-    title: 'Высокое качество',
-    description: 'Используем только проверенные материалы премиум-класса'
+    title: 'Элитные материалы',
+    description: 'Эксклюзивные материалы премиум-класса от ведущих европейских производителей'
   },
   {
     icon: 'Key',
-    title: 'Под ключ',
-    description: 'От поиска участка до финального ремонта и мебели'
+    title: 'Комплексное решение',
+    description: 'От приобретения земли до дизайнерской мебели — полный цикл под ключ'
   },
   {
     icon: 'Zap',
-    title: 'Быстрое строительство',
-    description: 'Срок возведения дома от 4 месяцев'
+    title: 'Точные сроки',
+    description: 'Гарантированное возведение за 4 месяца с фиксацией в договоре'
   },
   {
     icon: 'Video',
-    title: 'Онлайн-наблюдение',
-    description: 'Камеры 24/7 на каждом строительном объекте'
+    title: 'Полный контроль',
+    description: 'Система видеонаблюдения 24/7 и личный менеджер проекта'
   },
   {
     icon: 'Shield',
-    title: 'Гарантия качества',
-    description: 'Официальный договор и гарантия на все виды работ'
+    title: 'Юридические гарантии',
+    description: 'Расширенная гарантия и полное страхование всех этапов строительства'
   }
 ];
 
 export default function AdvantagesSection() {
   return (
-    <section id="advantages" className="py-20 bg-muted/30">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-16 animate-fade-in">
-          <Badge className="mb-4 bg-secondary text-white">Почему мы</Badge>
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">Наши преимущества</h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Мы предлагаем комплексный подход к строительству с максимальным контролем качества
+    <section id="advantages" className="py-32 bg-muted/40">
+      <div className="container mx-auto px-6">
+        <div className="text-center mb-20 animate-fade-in">
+          <Badge className="mb-6 bg-accent/10 text-accent border border-accent/20 font-medium tracking-wide">Наши стандарты</Badge>
+          <h2 className="text-5xl md:text-6xl font-bold mb-6 text-balance">Философия качества</h2>
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+            Индивидуальный подход и безупречное исполнение каждого проекта
           </p>
         </div>
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {advantages.map((advantage, index) => (
             <Card 
               key={index} 
-              className="border-2 hover:border-secondary transition-all duration-300 hover:shadow-lg animate-fade-in"
+              className="border border-border/50 hover:border-accent/50 transition-all duration-500 hover:shadow-xl hover:shadow-accent/5 animate-fade-in bg-white/80 backdrop-blur"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
-              <CardContent className="p-6">
-                <div className="w-14 h-14 bg-secondary/10 rounded-xl flex items-center justify-center mb-4">
-                  <Icon name={advantage.icon} className="text-secondary" size={28} />
+              <CardContent className="p-8">
+                <div className="w-16 h-16 bg-accent/10 rounded-lg flex items-center justify-center mb-6">
+                  <Icon name={advantage.icon} className="text-accent" size={32} />
                 </div>
-                <h3 className="text-xl font-bold mb-2">{advantage.title}</h3>
-                <p className="text-muted-foreground">{advantage.description}</p>
+                <h3 className="text-2xl font-bold mb-3">{advantage.title}</h3>
+                <p className="text-muted-foreground leading-relaxed">{advantage.description}</p>
               </CardContent>
             </Card>
           ))}
