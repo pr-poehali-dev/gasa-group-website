@@ -179,7 +179,7 @@ const Index = () => {
                   <Icon name="MessageSquare" size={20} className="mr-2" />
                   Получить консультацию
                 </Button>
-                <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-primary">
+                <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-foreground">
                   <Icon name="Play" size={20} className="mr-2" />
                   Смотреть видео
                 </Button>
