@@ -11,7 +11,7 @@ interface ProjectsSectionProps {
 const projects = [
   {
     id: 1,
-    title: 'Резиденция Комфорт',
+    title: 'Проект "Комфорт"',
     area: '120 м²',
     floors: 1,
     price: 'от 4.5 млн ₽',
@@ -20,7 +20,7 @@ const projects = [
   },
   {
     id: 2,
-    title: 'Вилла Премиум',
+    title: 'Проект "Премиум"',
     area: '240 м²',
     floors: 2,
     price: 'от 8.2 млн ₽',
@@ -29,7 +29,7 @@ const projects = [
   },
   {
     id: 3,
-    title: 'Особняк Семейный',
+    title: 'Проект "Семейный"',
     area: '180 м²',
     floors: 2,
     price: 'от 6.8 млн ₽',
@@ -44,70 +44,70 @@ export default function ProjectsSection({ selectedCategory, setSelectedCategory 
     : projects.filter(p => p.category === selectedCategory);
 
   return (
-    <section id="projects" className="py-32 bg-white">
+    <section id="projects" className="py-20 bg-secondary">
       <div className="container mx-auto px-6">
-        <div className="text-center mb-20 animate-fade-in">
-          <Badge className="mb-6 bg-accent/10 text-accent border border-accent/20 font-medium tracking-wide">Архитектурные решения</Badge>
-          <h2 className="text-5xl md:text-6xl font-bold mb-6 text-balance">Эксклюзивные проекты</h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-            Авторская архитектура или индивидуальная разработка по вашим пожеланиям
+        <div className="text-center mb-16 animate-fade-in">
+          <Badge className="mb-4 bg-white border border-border">Типовые проекты</Badge>
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-primary">Готовые решения</h2>
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            Проверенные проекты домов с оптимальными планировками и просчитанной сметой
           </p>
         </div>
-        <div className="flex justify-center gap-3 mb-16">
+        <div className="flex justify-center gap-3 mb-12">
           <Button 
             variant={selectedCategory === 'all' ? 'default' : 'outline'}
             onClick={() => setSelectedCategory('all')}
-            className={selectedCategory === 'all' ? 'bg-primary text-white font-semibold' : 'border-2 font-medium'}
+            className={selectedCategory === 'all' ? 'bg-primary hover:bg-primary/90' : ''}
           >
             Все проекты
           </Button>
           <Button 
             variant={selectedCategory === 'cottage' ? 'default' : 'outline'}
             onClick={() => setSelectedCategory('cottage')}
-            className={selectedCategory === 'cottage' ? 'bg-primary text-white font-semibold' : 'border-2 font-medium'}
+            className={selectedCategory === 'cottage' ? 'bg-primary hover:bg-primary/90' : ''}
           >
             Коттеджи
           </Button>
           <Button 
             variant={selectedCategory === 'house' ? 'default' : 'outline'}
             onClick={() => setSelectedCategory('house')}
-            className={selectedCategory === 'house' ? 'bg-primary text-white font-semibold' : 'border-2 font-medium'}
+            className={selectedCategory === 'house' ? 'bg-primary hover:bg-primary/90' : ''}
           >
             Особняки
           </Button>
         </div>
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {filteredProjects.map((project, index) => (
             <Card 
               key={project.id} 
-              className="overflow-hidden group cursor-pointer hover:shadow-2xl hover:shadow-accent/10 transition-all duration-500 animate-scale-in border-0 bg-white"
+              className="overflow-hidden group cursor-pointer hover:shadow-lg transition-shadow duration-300 animate-scale-in"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               <div className="relative overflow-hidden">
                 <img 
                   src={project.image} 
                   alt={project.title}
-                  className="w-full h-80 object-cover transition-transform duration-700 group-hover:scale-105"
+                  className="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-105"
                 />
-                <div className="absolute top-6 right-6 bg-accent text-primary px-4 py-2 rounded-md text-sm font-bold shadow-lg">
+                <div className="absolute top-4 right-4 bg-accent text-white px-3 py-1.5 rounded text-sm font-semibold">
                   {project.price}
                 </div>
-                <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+
               </div>
-              <CardContent className="p-8">
-                <h3 className="text-3xl font-bold mb-4">{project.title}</h3>
-                <div className="flex flex-wrap gap-6 text-muted-foreground mb-6">
+              <CardContent className="p-6">
+                <h3 className="text-2xl font-bold mb-4 text-primary">{project.title}</h3>
+                <div className="flex gap-6 text-muted-foreground mb-6">
                   <div className="flex items-center gap-2">
-                    <Icon name="Home" size={20} />
-                    <span className="font-medium">{project.area}</span>
+                    <Icon name="Home" size={18} />
+                    <span>{project.area}</span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <Icon name="Layers" size={20} />
-                    <span className="font-medium">{project.floors} уровень</span>
+                    <Icon name="Layers" size={18} />
+                    <span>{project.floors} этаж</span>
                   </div>
                 </div>
-                <Button className="w-full bg-primary hover:bg-primary/90 text-white font-semibold py-6">
-                  Изучить проект
+                <Button variant="outline" className="w-full border-2 hover:bg-primary hover:text-white hover:border-primary">
+                  Подробнее о проекте
                 </Button>
               </CardContent>
             </Card>
