@@ -486,7 +486,7 @@ const Index = () => {
                 <CardContent className="p-6">
                   <div className="flex justify-between items-center">
                     <span className="text-sm text-muted-foreground font-medium">{item.year}</span>
-                    <Button variant="ghost" size="sm" className="text-accent hover:text-accent/80 font-medium">
+                    <Button variant="ghost" size="sm" className="text-accent hover:text-accent hover:bg-accent/10 font-medium">
                       Смотреть проект
                       <Icon name="ArrowRight" size={16} className="ml-2" />
                     </Button>
