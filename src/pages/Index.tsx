@@ -20,12 +20,14 @@ const Index = () => {
     dataConsent: false 
   });
   const [logoRotation, setLogoRotation] = useState(0);
+  const [parallaxOffset, setParallaxOffset] = useState(0);
 
   useEffect(() => {
     const handleScroll = () => {
       const scrolled = window.scrollY;
       const rotation = (scrolled * 0.05) % 360;
       setLogoRotation(rotation);
+      setParallaxOffset(scrolled * 0.5);
     };
 
     window.addEventListener('scroll', handleScroll);
@@ -348,6 +350,7 @@ const Index = () => {
                   src="/img/7bd914ba-6370-4f05-b79b-f27333997911.jpg" 
                   alt="Строительство" 
                   className="w-full h-auto transition-all duration-700 group-hover:scale-110 group-hover:rotate-2"
+                  style={{ transform: `translateY(${parallaxOffset * 0.3}px)` }}
                 />
                 <div className="absolute inset-0 bg-gradient-to-tr from-accent/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 <div className="absolute top-6 right-6 bg-white/95 backdrop-blur-sm text-accent px-5 py-3 rounded-full flex items-center gap-2 shadow-lg border border-accent/20">
@@ -575,6 +578,7 @@ const Index = () => {
                     src="/img/f6037ffa-29b7-40be-b601-9c4757b868d7.jpg" 
                     alt="Дом" 
                     className="w-full h-full object-cover transition-all duration-700 group-hover:scale-110 group-hover:-rotate-2"
+                    style={{ transform: `translateY(${parallaxOffset * 0.2}px)` }}
                   />
                 </div>
                 <div className="group overflow-hidden rounded-3xl shadow-2xl mt-12 border-4 border-white/50">
@@ -582,6 +586,7 @@ const Index = () => {
                     src="/img/e1169cc6-c6e3-4c1f-9502-35ffadb88586.jpg" 
                     alt="Коттедж" 
                     className="w-full h-full object-cover transition-all duration-700 group-hover:scale-110 group-hover:rotate-2"
+                    style={{ transform: `translateY(${parallaxOffset * 0.15}px)` }}
                   />
                 </div>
               </div>
