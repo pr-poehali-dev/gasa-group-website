@@ -400,9 +400,7 @@ const Index = () => {
               variant={selectedCategory === 'house' ? 'default' : 'outline'}
               onClick={() => setSelectedCategory('house')}
               className={`rounded-full px-8 ${selectedCategory === 'house' ? 'bg-accent hover:bg-accent/90 text-accent-foreground shadow-md' : 'border-2 border-accent/30 hover:bg-accent/5'}`}
-            >
-              Дома
-            </Button>
+            >Двухэтажные</Button>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {filteredProjects.map((project, index) => (
