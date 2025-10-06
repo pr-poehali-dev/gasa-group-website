@@ -825,9 +825,9 @@ const Index = () => {
       )}
 
       {consultFormOpen && (
-        <div className="fixed inset-0 z-50 bg-black/50 flex items-center justify-center p-4" onClick={() => setConsultFormOpen(false)}>
+        <div className="fixed inset-0 z-50 bg-black/50 flex items-center justify-center p-4 animate-fade-in" onClick={() => setConsultFormOpen(false)}>
           <div 
-            className="bg-white rounded-3xl p-8 max-w-md w-full animate-scale-in shadow-2xl max-h-[90vh] overflow-y-auto"
+            className="bg-white rounded-3xl p-8 max-w-md w-full animate-fade-in-scale shadow-2xl max-h-[90vh] overflow-y-auto"
             onClick={(e) => e.stopPropagation()}
           >
             <div className="flex items-center justify-between mb-6">
