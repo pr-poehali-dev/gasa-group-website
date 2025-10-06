@@ -157,11 +157,11 @@ const Index = () => {
               />
             </div>
             <nav className="hidden md:flex items-center gap-8" style={{fontFamily: '"Prosto One", sans-serif'}}>
-              <a href="#projects" className="text-foreground/80 hover:text-foreground transition-colors font-medium text-base">Проекты</a>
-              <a href="#portfolio" className="text-foreground/80 hover:text-foreground transition-colors font-medium text-base">Портфолио</a>
-              <a href="#services" className="text-foreground/80 hover:text-foreground transition-colors font-medium text-base">Услуги</a>
-              <a href="#advantages" className="text-foreground/80 hover:text-foreground transition-colors font-medium text-base">Преимущества</a>
-              <a href="#contact" className="text-foreground/80 hover:text-foreground transition-colors font-medium text-base">Контакты</a>
+              <a href="#projects" className="text-black hover:text-accent transition-colors font-medium text-lg">Проекты</a>
+              <a href="#portfolio" className="text-black hover:text-accent transition-colors font-medium text-lg">Портфолио</a>
+              <a href="#services" className="text-black hover:text-accent transition-colors font-medium text-lg">Услуги</a>
+              <a href="#advantages" className="text-black hover:text-accent transition-colors font-medium text-lg">Преимущества</a>
+              <a href="#contact" className="text-black hover:text-accent transition-colors font-medium text-lg">Контакты</a>
             </nav>
             <div className="flex items-center gap-4">
               <a href="tel:+79398818942">
