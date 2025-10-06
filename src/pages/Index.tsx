@@ -243,16 +243,35 @@ const Index = () => {
                     </a>
                   </div>
                 </div>
-                <Button 
-                  className="mt-4 bg-accent hover:bg-accent/90 text-accent-foreground rounded-full w-full"
-                  onClick={() => {
-                    window.location.href = 'tel:+79398818942';
-                    setMobileMenuOpen(false);
-                  }}
-                >
-                  <Icon name="Phone" size={18} className="mr-2" />
-                  Позвонить сейчас
-                </Button>
+                <div className="flex gap-3 mt-4">
+                  <a href="https://wa.me/79398818942" target="_blank" rel="noopener noreferrer" className="flex-1">
+                    <Button 
+                      className="bg-[#25D366] hover:bg-[#20BA5A] text-white rounded-full w-full"
+                      onClick={() => setMobileMenuOpen(false)}
+                    >
+                      <Icon name="MessageCircle" size={18} className="mr-2" />
+                      WhatsApp
+                    </Button>
+                  </a>
+                  <a href="https://t.me/+79398818942" target="_blank" rel="noopener noreferrer" className="flex-1">
+                    <Button 
+                      className="bg-[#0088cc] hover:bg-[#0077b5] text-white rounded-full w-full"
+                      onClick={() => setMobileMenuOpen(false)}
+                    >
+                      <Icon name="Send" size={18} className="mr-2" />
+                      Telegram
+                    </Button>
+                  </a>
+                </div>
+                <a href="tel:+79398818942" className="block mt-3">
+                  <Button 
+                    className="bg-accent hover:bg-accent/90 text-accent-foreground rounded-full w-full"
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    <Icon name="Phone" size={18} className="mr-2" />
+                    Позвонить
+                  </Button>
+                </a>
               </div>
             </div>
           </div>
@@ -659,17 +678,23 @@ const Index = () => {
               </ul>
             </div>
             <div>
-              <h4 className="font-bold mb-4 text-foreground text-lg">Социальные сети</h4>
+              <h4 className="font-bold mb-4 text-foreground text-lg">Мессенджеры</h4>
               <div className="flex gap-3">
-                <Button size="icon" variant="outline" className="border-2 border-accent/30 text-accent hover:bg-accent hover:text-accent-foreground rounded-full">
-                  <Icon name="MessageCircle" size={20} />
-                </Button>
-                <Button size="icon" variant="outline" className="border-2 border-accent/30 text-accent hover:bg-accent hover:text-accent-foreground rounded-full">
-                  <Icon name="Send" size={20} />
-                </Button>
-                <Button size="icon" variant="outline" className="border-2 border-accent/30 text-accent hover:bg-accent hover:text-accent-foreground rounded-full">
-                  <Icon name="Phone" size={20} />
-                </Button>
+                <a href="https://wa.me/79398818942" target="_blank" rel="noopener noreferrer">
+                  <Button size="icon" variant="outline" className="border-2 border-accent/30 text-accent hover:bg-accent hover:text-accent-foreground rounded-full">
+                    <Icon name="MessageCircle" size={20} />
+                  </Button>
+                </a>
+                <a href="https://t.me/+79398818942" target="_blank" rel="noopener noreferrer">
+                  <Button size="icon" variant="outline" className="border-2 border-accent/30 text-accent hover:bg-accent hover:text-accent-foreground rounded-full">
+                    <Icon name="Send" size={20} />
+                  </Button>
+                </a>
+                <a href="tel:+79398818942">
+                  <Button size="icon" variant="outline" className="border-2 border-accent/30 text-accent hover:bg-accent hover:text-accent-foreground rounded-full">
+                    <Icon name="Phone" size={20} />
+                  </Button>
+                </a>
               </div>
             </div>
           </div>
