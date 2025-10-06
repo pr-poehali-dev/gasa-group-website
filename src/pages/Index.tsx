@@ -138,14 +138,12 @@ const Index = () => {
       <header className="fixed top-0 w-full bg-white/95 backdrop-blur-sm z-50 border-b border-border shadow-sm">
         <div className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
-            <div className="flex items-center gap-3">
-              <div className="w-12 h-12 bg-accent/10 rounded-full flex items-center justify-center border-2 border-accent/20">
-                <Icon name="Home" className="text-accent" size={24} />
-              </div>
-              <div>
-                <h1 className="text-2xl font-bold text-foreground tracking-tight">ГАСА ГРУПП</h1>
-                <p className="text-sm text-muted-foreground italic">Семейное тепло вашего дома</p>
-              </div>
+            <div className="flex items-center">
+              <img 
+                src="https://cdn.poehali.dev/files/3e469395-d68a-4cff-aead-1521c9a0c5e7.png" 
+                alt="ГАСА ГРУПП" 
+                className="h-16 w-auto"
+              />
             </div>
             <nav className="hidden md:flex items-center gap-8">
               <a href="#projects" className="text-foreground/80 hover:text-foreground transition-colors font-medium">Проекты</a>
