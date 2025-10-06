@@ -228,14 +228,30 @@ const Index = () => {
                 >
                   Контакты
                 </a>
+              </nav>
+              <div className="mt-8 pt-8 border-t border-accent/20">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="w-10 h-10 bg-accent/10 rounded-full flex items-center justify-center">
+                    <Icon name="Phone" className="text-accent" size={20} />
+                  </div>
+                  <div>
+                    <p className="text-xs text-muted-foreground">Позвоните нам</p>
+                    <a href="tel:+79398818942" className="text-lg font-bold text-foreground hover:text-accent transition-colors">
+                      +7 (939) 881-89-42
+                    </a>
+                  </div>
+                </div>
                 <Button 
                   className="mt-4 bg-accent hover:bg-accent/90 text-accent-foreground rounded-full w-full"
-                  onClick={() => setMobileMenuOpen(false)}
+                  onClick={() => {
+                    window.location.href = 'tel:+79398818942';
+                    setMobileMenuOpen(false);
+                  }}
                 >
                   <Icon name="Phone" size={18} className="mr-2" />
-                  Позвонить
+                  Позвонить сейчас
                 </Button>
-              </nav>
+              </div>
             </div>
           </div>
         </div>
