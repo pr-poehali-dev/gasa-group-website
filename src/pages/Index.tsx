@@ -9,6 +9,8 @@ import Icon from '@/components/ui/icon';
 const Index = () => {
   const [selectedCategory, setSelectedCategory] = useState('all');
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [quickFormOpen, setQuickFormOpen] = useState(false);
+  const [formData, setFormData] = useState({ name: '', phone: '' });
 
   const projects = [
     {
@@ -737,7 +739,80 @@ const Index = () => {
             </div>
           </div>
         </a>
+        <button 
+          onClick={() => setQuickFormOpen(true)}
+          className="group relative"
+        >
+          <div className="absolute right-16 top-1/2 -translate-y-1/2 bg-white px-4 py-2 rounded-full shadow-lg opacity-0 group-hover:opacity-100 transition-all duration-300 whitespace-nowrap pointer-events-none">
+            <p className="text-sm font-medium text-foreground">Быстрая заявка</p>
+          </div>
+          <div className="relative">
+            <div className="absolute inset-0 bg-accent rounded-full animate-ping opacity-75"></div>
+            <div className="relative w-14 h-14 bg-accent hover:bg-accent/90 rounded-full flex items-center justify-center shadow-2xl transition-all hover:scale-110 cursor-pointer animate-bounce-slow" style={{ animationDelay: '0.4s' }}>
+              <Icon name="Mail" className="text-accent-foreground" size={28} />
+            </div>
+          </div>
+        </button>
       </div>
+
+      {quickFormOpen && (
+        <div className="fixed inset-0 z-50 bg-black/50 flex items-center justify-center p-4" onClick={() => setQuickFormOpen(false)}>
+          <div 
+            className="bg-white rounded-3xl p-8 max-w-md w-full animate-scale-in shadow-2xl"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div className="flex items-center justify-between mb-6">
+              <h3 className="text-2xl font-bold text-foreground">Быстрая заявка</h3>
+              <Button 
+                variant="ghost" 
+                size="icon"
+                onClick={() => setQuickFormOpen(false)}
+              >
+                <Icon name="X" size={24} />
+              </Button>
+            </div>
+            <p className="text-muted-foreground mb-6">
+              Оставьте контакты, и мы перезвоним в течение 15 минут
+            </p>
+            <form className="space-y-4" onSubmit={(e) => {
+              e.preventDefault();
+              alert(`Спасибо, ${formData.name}! Мы свяжемся с вами по номеру ${formData.phone}`);
+              setQuickFormOpen(false);
+              setFormData({ name: '', phone: '' });
+            }}>
+              <div>
+                <Input 
+                  placeholder="Ваше имя" 
+                  value={formData.name}
+                  onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                  required
+                  className="rounded-xl border-2 border-accent/20 focus:border-accent h-12"
+                />
+              </div>
+              <div>
+                <Input 
+                  type="tel" 
+                  placeholder="Телефон" 
+                  value={formData.phone}
+                  onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                  required
+                  className="rounded-xl border-2 border-accent/20 focus:border-accent h-12"
+                />
+              </div>
+              <Button 
+                type="submit"
+                className="w-full bg-accent hover:bg-accent/90 text-accent-foreground rounded-full h-12 text-base font-semibold shadow-lg hover:shadow-xl transition-all"
+              >
+                <Icon name="Phone" size={20} className="mr-2" />
+                Перезвоните мне
+              </Button>
+            </form>
+            <p className="text-xs text-muted-foreground text-center mt-4">
+              Нажимая кнопку, вы соглашаетесь с политикой конфиденциальности
+            </p>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
