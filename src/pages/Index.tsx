@@ -392,9 +392,12 @@ const Index = () => {
 
       <section id="advantages" className={`py-24 bg-gradient-to-b from-background to-muted/20 transition-all duration-1000 ${visibleSections.has('advantages') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-20'}`}>
         <div className="container mx-auto px-4">
-          <div className="text-center mb-20 animate-fade-in">
+          <div className={`text-center mb-20 transition-all duration-700 ${visibleSections.has('advantages') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
             <Badge className="mb-6 bg-accent/20 text-accent border border-accent/30 px-4 py-2 text-sm font-medium rounded-full">Почему нам доверяют семьи</Badge>
-            <h2 className="text-5xl md:text-6xl font-bold mb-6 text-foreground">Наши ценности</h2>
+            <h2 className="text-5xl md:text-6xl font-bold mb-6 text-foreground relative inline-block">
+              Наши ценности
+              <span className={`absolute bottom-0 left-0 h-1 bg-accent transition-all duration-1000 ${visibleSections.has('advantages') ? 'w-full' : 'w-0'}`} style={{ transitionDelay: '0.3s' }}></span>
+            </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
               Мы строим не просто дома — мы создаём пространство для семейного тепла, уюта и счастья
             </p>
@@ -421,9 +424,12 @@ const Index = () => {
 
       <section id="projects" className={`py-24 bg-muted/10 transition-all duration-1000 ${visibleSections.has('projects') ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-20'}`}>
         <div className="container mx-auto px-4">
-          <div className="text-center mb-20 animate-fade-in">
+          <div className={`text-center mb-20 transition-all duration-700 ${visibleSections.has('projects') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
             <Badge className="mb-6 bg-accent/20 text-accent border border-accent/30 px-4 py-2 text-sm font-medium rounded-full">Готовые решения</Badge>
-            <h2 className="text-5xl md:text-6xl font-bold mb-6 text-foreground">Проекты домов</h2>
+            <h2 className="text-5xl md:text-6xl font-bold mb-6 text-foreground relative inline-block">
+              Проекты домов
+              <span className={`absolute bottom-0 left-0 h-1 bg-accent transition-all duration-1000 ${visibleSections.has('projects') ? 'w-full' : 'w-0'}`} style={{ transitionDelay: '0.3s' }}></span>
+            </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
               Каждый проект продуман до мелочей для комфорта вашей семьи
             </p>
@@ -494,9 +500,12 @@ const Index = () => {
 
       <section id="portfolio" className={`py-24 bg-gradient-to-b from-background to-accent/5 transition-all duration-1000 ${visibleSections.has('portfolio') ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-20'}`}>
         <div className="container mx-auto px-4">
-          <div className="text-center mb-20 animate-fade-in">
+          <div className={`text-center mb-20 transition-all duration-700 ${visibleSections.has('portfolio') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
             <Badge className="mb-6 bg-accent/20 text-accent border border-accent/30 px-4 py-2 text-sm font-medium rounded-full">Истории счастливых семей</Badge>
-            <h2 className="text-5xl md:text-6xl font-bold mb-6 text-foreground">Наши работы</h2>
+            <h2 className="text-5xl md:text-6xl font-bold mb-6 text-foreground relative inline-block">
+              Наши работы
+              <span className={`absolute bottom-0 left-0 h-1 bg-accent transition-all duration-1000 ${visibleSections.has('portfolio') ? 'w-full' : 'w-0'}`} style={{ transitionDelay: '0.3s' }}></span>
+            </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
               Более 120 семей уже нашли свой дом мечты вместе с нами
             </p>
@@ -549,9 +558,12 @@ const Index = () => {
 
       <section id="services" className={`py-24 bg-muted/10 transition-all duration-1000 ${visibleSections.has('services') ? 'opacity-100 scale-100' : 'opacity-0 scale-95'}`}>
         <div className="container mx-auto px-4">
-          <div className="text-center mb-20 animate-fade-in">
+          <div className={`text-center mb-20 transition-all duration-700 ${visibleSections.has('services') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
             <Badge className="mb-6 bg-accent/20 text-accent border border-accent/30 px-4 py-2 text-sm font-medium rounded-full">Наш путь к вашему дому</Badge>
-            <h2 className="text-5xl md:text-6xl font-bold mb-6 text-foreground">Этапы сотрудничества</h2>
+            <h2 className="text-5xl md:text-6xl font-bold mb-6 text-foreground relative inline-block">
+              Этапы сотрудничества
+              <span className={`absolute bottom-0 left-0 h-1 bg-accent transition-all duration-1000 ${visibleSections.has('services') ? 'w-full' : 'w-0'}`} style={{ transitionDelay: '0.3s' }}></span>
+            </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
               От первой встречи до радостного новоселья — мы рядом на каждом шагу
             </p>
@@ -578,9 +590,12 @@ const Index = () => {
       <section id="about" className={`py-24 bg-gradient-to-br from-accent/10 via-accent/5 to-background transition-all duration-1000 ${visibleSections.has('about') ? 'opacity-100 scale-100 rotate-0' : 'opacity-0 scale-90 -rotate-1'}`}>
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div className="animate-fade-in-up">
+            <div className={`transition-all duration-700 ${visibleSections.has('about') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
               <Badge className="mb-6 bg-accent/20 text-accent border border-accent/30 px-4 py-2 text-sm font-medium rounded-full">Наша история</Badge>
-              <h2 className="text-5xl md:text-6xl font-bold mb-8 text-foreground">О компании ГАСА ГРУПП</h2>
+              <h2 className="text-5xl md:text-6xl font-bold mb-8 text-foreground relative inline-block">
+                О компании ГАСА ГРУПП
+                <span className={`absolute bottom-0 left-0 h-1 bg-accent transition-all duration-1000 ${visibleSections.has('about') ? 'w-full' : 'w-0'}`} style={{ transitionDelay: '0.3s' }}></span>
+              </h2>
               <p className="text-xl text-muted-foreground mb-6 leading-relaxed">
                 Мы — команда единомышленников, для которых строительство дома — это создание пространства для семейного счастья. Мы верим в честность, качество и бережное отношение к каждому клиенту.
               </p>
@@ -635,9 +650,12 @@ const Index = () => {
       <section id="contact" className={`py-24 bg-gradient-to-b from-background to-accent/5 transition-all duration-1000 ${visibleSections.has('contact') ? 'opacity-100 translate-y-0 scale-100' : 'opacity-0 translate-y-10 scale-95'}`}>
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
-            <div className="text-center mb-16 animate-fade-in">
+            <div className={`text-center mb-16 transition-all duration-700 ${visibleSections.has('contact') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
               <Badge className="mb-6 bg-accent/20 text-accent border border-accent/30 px-4 py-2 text-sm font-medium rounded-full">Свяжитесь с нами</Badge>
-              <h2 className="text-5xl md:text-6xl font-bold mb-6 text-foreground">Начнём ваш путь</h2>
+              <h2 className="text-5xl md:text-6xl font-bold mb-6 text-foreground relative inline-block">
+                Начнём ваш путь
+                <span className={`absolute bottom-0 left-0 h-1 bg-accent transition-all duration-1000 ${visibleSections.has('contact') ? 'w-full' : 'w-0'}`} style={{ transitionDelay: '0.3s' }}></span>
+              </h2>
               <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
                 Оставьте заявку, и мы с радостью поделимся своими знаниями и поможем создать дом вашей мечты
               </p>
