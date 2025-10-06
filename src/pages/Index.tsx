@@ -403,8 +403,8 @@ const Index = () => {
             {advantages.map((advantage, index) => (
               <Card 
                 key={index} 
-                className="border border-accent/20 hover:border-accent/40 transition-all duration-300 hover:shadow-xl animate-fade-in bg-white/80 backdrop-blur-sm rounded-2xl"
-                style={{ animationDelay: `${index * 0.1}s` }}
+                className={`border border-accent/20 hover:border-accent/40 transition-all duration-700 hover:shadow-xl bg-white/80 backdrop-blur-sm rounded-2xl ${visibleSections.has('advantages') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
+                style={{ transitionDelay: visibleSections.has('advantages') ? `${index * 0.1}s` : '0s' }}
               >
                 <CardContent className="p-8">
                   <div className="w-16 h-16 bg-accent/10 rounded-2xl flex items-center justify-center mb-6 border border-accent/20">
@@ -451,8 +451,8 @@ const Index = () => {
             {filteredProjects.map((project, index) => (
               <Card 
                 key={project.id} 
-                className="overflow-hidden group cursor-pointer hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 animate-scale-in bg-white border-2 border-accent/10 rounded-3xl"
-                style={{ animationDelay: `${index * 0.1}s` }}
+                className={`overflow-hidden group cursor-pointer hover:shadow-2xl hover:-translate-y-2 transition-all duration-700 bg-white border-2 border-accent/10 rounded-3xl ${visibleSections.has('projects') ? 'opacity-100 translate-x-0 scale-100' : 'opacity-0 -translate-x-10 scale-95'}`}
+                style={{ transitionDelay: visibleSections.has('projects') ? `${index * 0.15}s` : '0s' }}
               >
                 <div className="relative overflow-hidden">
                   <img 
@@ -505,8 +505,8 @@ const Index = () => {
             {portfolio.map((item, index) => (
               <Card 
                 key={index}
-                className="overflow-hidden group cursor-pointer hover:shadow-2xl hover:-translate-y-3 transition-all duration-500 animate-fade-in bg-white border-2 border-accent/10 rounded-3xl"
-                style={{ animationDelay: `${index * 0.1}s` }}
+                className={`overflow-hidden group cursor-pointer hover:shadow-2xl hover:-translate-y-3 transition-all duration-700 bg-white border-2 border-accent/10 rounded-3xl ${visibleSections.has('portfolio') ? 'opacity-100 translate-x-0 rotate-0' : 'opacity-0 translate-x-10 rotate-2'}`}
+                style={{ transitionDelay: visibleSections.has('portfolio') ? `${index * 0.15}s` : '0s' }}
               >
                 <div className="relative overflow-hidden h-80">
                   <img 
@@ -560,8 +560,8 @@ const Index = () => {
             {services.map((service, index) => (
               <Card 
                 key={index}
-                className="relative overflow-hidden hover:shadow-xl transition-all duration-300 animate-fade-in bg-white border-2 border-accent/10 rounded-3xl group"
-                style={{ animationDelay: `${index * 0.1}s` }}
+                className={`relative overflow-hidden hover:shadow-xl transition-all duration-700 bg-white border-2 border-accent/10 rounded-3xl group ${visibleSections.has('services') ? 'opacity-100 scale-100' : 'opacity-0 scale-90'}`}
+                style={{ transitionDelay: visibleSections.has('services') ? `${index * 0.1}s` : '0s' }}
               >
                 <CardContent className="p-8">
                   <div className="text-7xl font-bold text-accent/15 mb-6 group-hover:text-accent/25 transition-colors">{service.number}</div>
