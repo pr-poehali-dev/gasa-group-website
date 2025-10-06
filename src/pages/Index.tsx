@@ -355,10 +355,11 @@ const Index = () => {
                   className="w-full h-auto transition-all duration-700 group-hover:scale-110 group-hover:rotate-2"
                   style={{ 
                     transform: `translateY(${parallaxOffset * 0.3}px)`,
-                    filter: `blur(${scrollBlur * 0.3}px)`
+                    filter: `blur(${scrollBlur * 0.3}px) brightness(${1 - scrollBlur * 0.05})`
                   }}
                 />
                 <div className="absolute inset-0 bg-gradient-to-tr from-accent/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div className="absolute inset-0 bg-black transition-opacity duration-300" style={{ opacity: scrollBlur * 0.05 }}></div>
                 <div className="absolute top-6 right-6 bg-white/95 backdrop-blur-sm text-accent px-5 py-3 rounded-full flex items-center gap-2 shadow-lg border border-accent/20">
                   <Icon name="Video" size={18} />
                   <span className="text-sm font-semibold">LIVE</span>
@@ -581,27 +582,29 @@ const Index = () => {
             </div>
             <div className="relative animate-scale-in">
               <div className="grid grid-cols-2 gap-6">
-                <div className="group overflow-hidden rounded-3xl shadow-2xl border-4 border-white/50">
+                <div className="group overflow-hidden rounded-3xl shadow-2xl border-4 border-white/50 relative">
                   <img 
                     src="/img/f6037ffa-29b7-40be-b601-9c4757b868d7.jpg" 
                     alt="Дом" 
                     className="w-full h-full object-cover transition-all duration-700 group-hover:scale-110 group-hover:-rotate-2"
                     style={{ 
                       transform: `translateY(${parallaxOffset * 0.2}px)`,
-                      filter: `blur(${scrollBlur * 0.2}px)`
+                      filter: `blur(${scrollBlur * 0.2}px) brightness(${1 - scrollBlur * 0.04})`
                     }}
                   />
+                  <div className="absolute inset-0 bg-black transition-opacity duration-300" style={{ opacity: scrollBlur * 0.04 }}></div>
                 </div>
-                <div className="group overflow-hidden rounded-3xl shadow-2xl mt-12 border-4 border-white/50">
+                <div className="group overflow-hidden rounded-3xl shadow-2xl mt-12 border-4 border-white/50 relative">
                   <img 
                     src="/img/e1169cc6-c6e3-4c1f-9502-35ffadb88586.jpg" 
                     alt="Коттедж" 
                     className="w-full h-full object-cover transition-all duration-700 group-hover:scale-110 group-hover:rotate-2"
                     style={{ 
                       transform: `translateY(${parallaxOffset * 0.15}px)`,
-                      filter: `blur(${scrollBlur * 0.15}px)`
+                      filter: `blur(${scrollBlur * 0.15}px) brightness(${1 - scrollBlur * 0.03})`
                     }}
                   />
+                  <div className="absolute inset-0 bg-black transition-opacity duration-300" style={{ opacity: scrollBlur * 0.03 }}></div>
                 </div>
               </div>
             </div>
