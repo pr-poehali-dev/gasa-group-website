@@ -704,14 +704,17 @@ const Index = () => {
         </div>
       </footer>
 
-      <div className="fixed bottom-6 right-6 z-50 flex flex-col gap-3">
+      <div className="fixed bottom-6 right-6 z-50 flex flex-col gap-3 animate-fade-in">
         <a 
           href="https://wa.me/79398818942" 
           target="_blank" 
           rel="noopener noreferrer"
-          className="group"
+          className="group relative"
         >
-          <div className="w-14 h-14 bg-[#25D366] hover:bg-[#20BA5A] rounded-full flex items-center justify-center shadow-2xl transition-all hover:scale-110 cursor-pointer">
+          <div className="absolute right-16 top-1/2 -translate-y-1/2 bg-white px-4 py-2 rounded-full shadow-lg opacity-0 group-hover:opacity-100 transition-all duration-300 whitespace-nowrap pointer-events-none">
+            <p className="text-sm font-medium text-foreground">Написать в WhatsApp</p>
+          </div>
+          <div className="w-14 h-14 bg-[#25D366] hover:bg-[#20BA5A] rounded-full flex items-center justify-center shadow-2xl transition-all hover:scale-110 cursor-pointer animate-bounce-slow">
             <Icon name="MessageCircle" className="text-white" size={28} />
           </div>
         </a>
@@ -719,9 +722,12 @@ const Index = () => {
           href="https://t.me/+79398818942" 
           target="_blank" 
           rel="noopener noreferrer"
-          className="group"
+          className="group relative"
         >
-          <div className="w-14 h-14 bg-[#0088cc] hover:bg-[#0077b5] rounded-full flex items-center justify-center shadow-2xl transition-all hover:scale-110 cursor-pointer">
+          <div className="absolute right-16 top-1/2 -translate-y-1/2 bg-white px-4 py-2 rounded-full shadow-lg opacity-0 group-hover:opacity-100 transition-all duration-300 whitespace-nowrap pointer-events-none">
+            <p className="text-sm font-medium text-foreground">Написать в Telegram</p>
+          </div>
+          <div className="w-14 h-14 bg-[#0088cc] hover:bg-[#0077b5] rounded-full flex items-center justify-center shadow-2xl transition-all hover:scale-110 cursor-pointer animate-bounce-slow" style={{ animationDelay: '0.2s' }}>
             <Icon name="Send" className="text-white" size={28} />
           </div>
         </a>
