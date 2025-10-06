@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -22,6 +22,7 @@ const Index = () => {
   const [logoRotation, setLogoRotation] = useState(0);
   const [parallaxOffset, setParallaxOffset] = useState(0);
   const [scrollBlur, setScrollBlur] = useState(0);
+  const [visibleSections, setVisibleSections] = useState<Set<string>>(new Set());
 
   useEffect(() => {
     const handleScroll = () => {
@@ -33,8 +34,27 @@ const Index = () => {
       setScrollBlur(blur);
     };
 
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -100px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          setVisibleSections(prev => new Set(prev).add(entry.target.id));
+        }
+      });
+    }, observerOptions);
+
+    const sections = document.querySelectorAll('section[id]');
+    sections.forEach(section => observer.observe(section));
+
     window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      sections.forEach(section => observer.unobserve(section));
+    };
   }, []);
 
   const projects = [
@@ -370,7 +390,7 @@ const Index = () => {
         </div>
       </section>
 
-      <section id="advantages" className="py-24 bg-gradient-to-b from-background to-muted/20">
+      <section id="advantages" className={`py-24 bg-gradient-to-b from-background to-muted/20 transition-all duration-1000 ${visibleSections.has('advantages') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-20'}`}>
         <div className="container mx-auto px-4">
           <div className="text-center mb-20 animate-fade-in">
             <Badge className="mb-6 bg-accent/20 text-accent border border-accent/30 px-4 py-2 text-sm font-medium rounded-full">Почему нам доверяют семьи</Badge>
@@ -399,7 +419,7 @@ const Index = () => {
         </div>
       </section>
 
-      <section id="projects" className="py-24 bg-muted/10">
+      <section id="projects" className={`py-24 bg-muted/10 transition-all duration-1000 ${visibleSections.has('projects') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-20'}`}>
         <div className="container mx-auto px-4">
           <div className="text-center mb-20 animate-fade-in">
             <Badge className="mb-6 bg-accent/20 text-accent border border-accent/30 px-4 py-2 text-sm font-medium rounded-full">Готовые решения</Badge>
@@ -472,7 +492,7 @@ const Index = () => {
         </div>
       </section>
 
-      <section id="portfolio" className="py-24 bg-gradient-to-b from-background to-accent/5">
+      <section id="portfolio" className={`py-24 bg-gradient-to-b from-background to-accent/5 transition-all duration-1000 ${visibleSections.has('portfolio') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-20'}`}>
         <div className="container mx-auto px-4">
           <div className="text-center mb-20 animate-fade-in">
             <Badge className="mb-6 bg-accent/20 text-accent border border-accent/30 px-4 py-2 text-sm font-medium rounded-full">Истории счастливых семей</Badge>
@@ -527,7 +547,7 @@ const Index = () => {
         </div>
       </section>
 
-      <section id="services" className="py-24 bg-muted/10">
+      <section id="services" className={`py-24 bg-muted/10 transition-all duration-1000 ${visibleSections.has('services') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-20'}`}>
         <div className="container mx-auto px-4">
           <div className="text-center mb-20 animate-fade-in">
             <Badge className="mb-6 bg-accent/20 text-accent border border-accent/30 px-4 py-2 text-sm font-medium rounded-full">Наш путь к вашему дому</Badge>
@@ -555,7 +575,7 @@ const Index = () => {
         </div>
       </section>
 
-      <section id="about" className="py-24 bg-gradient-to-br from-accent/10 via-accent/5 to-background">
+      <section id="about" className={`py-24 bg-gradient-to-br from-accent/10 via-accent/5 to-background transition-all duration-1000 ${visibleSections.has('about') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-20'}`}>
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="animate-fade-in-up">
@@ -612,7 +632,7 @@ const Index = () => {
         </div>
       </section>
 
-      <section id="contact" className="py-24 bg-gradient-to-b from-background to-accent/5">
+      <section id="contact" className={`py-24 bg-gradient-to-b from-background to-accent/5 transition-all duration-1000 ${visibleSections.has('contact') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-20'}`}>
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-16 animate-fade-in">
