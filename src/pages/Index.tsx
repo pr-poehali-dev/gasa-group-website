@@ -153,7 +153,7 @@ const Index = () => {
               <img 
                 src="https://cdn.poehali.dev/files/ccefff1e-481b-4116-ad47-87e9d52af73b.png" 
                 alt="ГАСА ГРУПП" 
-                className="h-20 w-auto drop-shadow-lg"
+                className="h-20 w-auto drop-shadow-lg transition-transform duration-300 hover:scale-110 cursor-pointer"
               />
             </div>
             <nav className="hidden md:flex items-center gap-8" style={{fontFamily: '"Prosto One", sans-serif', fontWeight: 700}}>
