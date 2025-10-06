@@ -11,6 +11,13 @@ const Index = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [quickFormOpen, setQuickFormOpen] = useState(false);
   const [formData, setFormData] = useState({ name: '', phone: '' });
+  const [consultFormOpen, setConsultFormOpen] = useState(false);
+  const [consultData, setConsultData] = useState({ 
+    name: '', 
+    phone: '', 
+    privacyConsent: false, 
+    dataConsent: false 
+  });
 
   const projects = [
     {
@@ -292,7 +299,11 @@ const Index = () => {
                 Создаём пространство для семейного счастья и уюта. Полный цикл строительства с заботой о каждой детали — от фундамента до последнего штриха в интерьере.
               </p>
               <div className="flex flex-wrap gap-4">
-                <Button size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground rounded-full px-8 shadow-lg hover:shadow-xl transition-all">
+                <Button 
+                  size="lg" 
+                  className="bg-accent hover:bg-accent/90 text-accent-foreground rounded-full px-8 shadow-lg hover:shadow-xl transition-all"
+                  onClick={() => setConsultFormOpen(true)}
+                >
                   <Icon name="MessageSquare" size={20} className="mr-2" />
                   Получить консультацию
                 </Button>
@@ -810,6 +821,95 @@ const Index = () => {
             <p className="text-xs text-muted-foreground text-center mt-4">
               Нажимая кнопку, вы соглашаетесь с политикой конфиденциальности
             </p>
+          </div>
+        </div>
+      )}
+
+      {consultFormOpen && (
+        <div className="fixed inset-0 z-50 bg-black/50 flex items-center justify-center p-4" onClick={() => setConsultFormOpen(false)}>
+          <div 
+            className="bg-white rounded-3xl p-8 max-w-md w-full animate-scale-in shadow-2xl max-h-[90vh] overflow-y-auto"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div className="flex items-center justify-between mb-6">
+              <h3 className="text-2xl font-bold text-foreground">Получить консультацию</h3>
+              <Button 
+                variant="ghost" 
+                size="icon"
+                onClick={() => setConsultFormOpen(false)}
+              >
+                <Icon name="X" size={24} />
+              </Button>
+            </div>
+            <p className="text-muted-foreground mb-6">
+              Оставьте заявку, и наш специалист свяжется с вами в ближайшее время для бесплатной консультации
+            </p>
+            <form className="space-y-4" onSubmit={(e) => {
+              e.preventDefault();
+              if (!consultData.privacyConsent || !consultData.dataConsent) {
+                alert('Необходимо согласие с политикой конфиденциальности и обработкой персональных данных');
+                return;
+              }
+              alert(`Спасибо, ${consultData.name}! Мы свяжемся с вами по номеру ${consultData.phone}`);
+              setConsultFormOpen(false);
+              setConsultData({ name: '', phone: '', privacyConsent: false, dataConsent: false });
+            }}>
+              <div>
+                <Input 
+                  placeholder="Ваше имя" 
+                  value={consultData.name}
+                  onChange={(e) => setConsultData({ ...consultData, name: e.target.value })}
+                  required
+                  className="rounded-xl border-2 border-accent/20 focus:border-accent h-12"
+                />
+              </div>
+              <div>
+                <Input 
+                  type="tel" 
+                  placeholder="Номер телефона" 
+                  value={consultData.phone}
+                  onChange={(e) => setConsultData({ ...consultData, phone: e.target.value })}
+                  required
+                  className="rounded-xl border-2 border-accent/20 focus:border-accent h-12"
+                />
+              </div>
+              
+              <div className="space-y-3 pt-2">
+                <label className="flex items-start gap-3 cursor-pointer group">
+                  <input
+                    type="checkbox"
+                    checked={consultData.privacyConsent}
+                    onChange={(e) => setConsultData({ ...consultData, privacyConsent: e.target.checked })}
+                    required
+                    className="mt-1 w-5 h-5 rounded border-2 border-accent/30 text-accent focus:ring-accent focus:ring-2 cursor-pointer"
+                  />
+                  <span className="text-sm text-muted-foreground group-hover:text-foreground transition-colors">
+                    Я согласен с <a href="#" className="text-accent underline hover:no-underline">политикой конфиденциальности</a>
+                  </span>
+                </label>
+
+                <label className="flex items-start gap-3 cursor-pointer group">
+                  <input
+                    type="checkbox"
+                    checked={consultData.dataConsent}
+                    onChange={(e) => setConsultData({ ...consultData, dataConsent: e.target.checked })}
+                    required
+                    className="mt-1 w-5 h-5 rounded border-2 border-accent/30 text-accent focus:ring-accent focus:ring-2 cursor-pointer"
+                  />
+                  <span className="text-sm text-muted-foreground group-hover:text-foreground transition-colors">
+                    Я согласен на <a href="#" className="text-accent underline hover:no-underline">обработку персональных данных</a>
+                  </span>
+                </label>
+              </div>
+
+              <Button 
+                type="submit"
+                className="w-full bg-accent hover:bg-accent/90 text-accent-foreground rounded-full h-12 text-base font-semibold shadow-lg hover:shadow-xl transition-all mt-6"
+              >
+                <Icon name="Send" size={20} className="mr-2" />
+                Отправить заявку
+              </Button>
+            </form>
           </div>
         </div>
       )}
