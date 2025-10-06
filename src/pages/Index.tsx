@@ -530,13 +530,12 @@ const Index = () => {
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-4 gap-8 mb-8">
             <div>
-              <div className="flex items-center gap-3 mb-4">
-                <div className="w-12 h-12 bg-accent/20 rounded-full flex items-center justify-center border-2 border-accent/30">
-                  <Icon name="Home" className="text-accent" size={26} />
-                </div>
-                <div>
-                  <h3 className="text-xl font-bold text-foreground">ГАСА ГРУПП</h3>
-                </div>
+              <div className="mb-4">
+                <img 
+                  src="https://cdn.poehali.dev/files/16e58f4c-224d-4d3b-bca6-7092af1d374f.png" 
+                  alt="ГАСА ГРУПП" 
+                  className="h-16 w-auto mb-4"
+                />
               </div>
               <p className="text-muted-foreground leading-relaxed">
                 Создаём дома для семейного счастья в Краснодаре и Адыгее
