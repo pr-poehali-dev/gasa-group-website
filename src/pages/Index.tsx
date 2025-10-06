@@ -167,7 +167,7 @@ const Index = () => {
               <a href="tel:+79398818942">
                 <Button className="hidden md:flex bg-accent hover:bg-accent/90 text-accent-foreground rounded-full px-6 shadow-md hover:shadow-lg transition-all text-lg">
                   <Icon name="Phone" size={20} className="mr-2" />
-                  +7 (939) 881-89-42
+                  Звонок
                 </Button>
               </a>
               <Button 
