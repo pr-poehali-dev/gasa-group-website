@@ -24,7 +24,7 @@ const Index = () => {
   useEffect(() => {
     const handleScroll = () => {
       const scrolled = window.scrollY;
-      const rotation = Math.min(scrolled * 0.05, 360);
+      const rotation = (scrolled * 0.05) % 360;
       setLogoRotation(rotation);
     };
 
