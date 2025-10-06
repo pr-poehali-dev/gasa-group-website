@@ -140,7 +140,7 @@ const Index = () => {
           <div className="flex items-center justify-between">
             <div className="flex items-center">
               <img 
-                src="https://cdn.poehali.dev/files/3e469395-d68a-4cff-aead-1521c9a0c5e7.png" 
+                src="https://cdn.poehali.dev/files/16e58f4c-224d-4d3b-bca6-7092af1d374f.png" 
                 alt="ГАСА ГРУПП" 
                 className="h-16 w-auto"
               />
