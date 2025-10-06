@@ -151,7 +151,7 @@ const Index = () => {
           <div className="flex items-center justify-between">
             <div className="flex items-center">
               <img 
-                src="https://cdn.poehali.dev/files/16e58f4c-224d-4d3b-bca6-7092af1d374f.png" 
+                src="https://cdn.poehali.dev/files/ccefff1e-481b-4116-ad47-87e9d52af73b.png" 
                 alt="ГАСА ГРУПП" 
                 className="h-16 w-auto"
               />
@@ -192,7 +192,7 @@ const Index = () => {
             <div className="p-6">
               <div className="flex items-center justify-between mb-8">
                 <img 
-                  src="https://cdn.poehali.dev/files/16e58f4c-224d-4d3b-bca6-7092af1d374f.png" 
+                  src="https://cdn.poehali.dev/files/ccefff1e-481b-4116-ad47-87e9d52af73b.png" 
                   alt="ГАСА ГРУПП" 
                   className="h-12 w-auto"
                 />
@@ -663,7 +663,7 @@ const Index = () => {
             <div>
               <div className="mb-4">
                 <img 
-                  src="https://cdn.poehali.dev/files/16e58f4c-224d-4d3b-bca6-7092af1d374f.png" 
+                  src="https://cdn.poehali.dev/files/ccefff1e-481b-4116-ad47-87e9d52af73b.png" 
                   alt="ГАСА ГРУПП" 
                   className="h-16 w-auto mb-4"
                 />
