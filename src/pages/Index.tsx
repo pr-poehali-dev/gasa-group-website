@@ -157,16 +157,16 @@ const Index = () => {
               />
             </div>
             <nav className="hidden md:flex items-center gap-8">
-              <a href="#projects" className="text-foreground/80 hover:text-foreground transition-colors font-medium">Проекты</a>
-              <a href="#portfolio" className="text-foreground/80 hover:text-foreground transition-colors font-medium">Портфолио</a>
-              <a href="#services" className="text-foreground/80 hover:text-foreground transition-colors font-medium">Услуги</a>
-              <a href="#advantages" className="text-foreground/80 hover:text-foreground transition-colors font-medium">Преимущества</a>
-              <a href="#contact" className="text-foreground/80 hover:text-foreground transition-colors font-medium">Контакты</a>
+              <a href="#projects" className="text-foreground/80 hover:text-foreground transition-colors font-medium text-lg">Проекты</a>
+              <a href="#portfolio" className="text-foreground/80 hover:text-foreground transition-colors font-medium text-lg">Портфолио</a>
+              <a href="#services" className="text-foreground/80 hover:text-foreground transition-colors font-medium text-lg">Услуги</a>
+              <a href="#advantages" className="text-foreground/80 hover:text-foreground transition-colors font-medium text-lg">Преимущества</a>
+              <a href="#contact" className="text-foreground/80 hover:text-foreground transition-colors font-medium text-lg">Контакты</a>
             </nav>
             <div className="flex items-center gap-4">
               <a href="tel:+79398818942">
-                <Button className="hidden md:flex bg-accent hover:bg-accent/90 text-accent-foreground rounded-full px-6 shadow-md hover:shadow-lg transition-all">
-                  <Icon name="Phone" size={18} className="mr-2" />
+                <Button className="hidden md:flex bg-accent hover:bg-accent/90 text-accent-foreground rounded-full px-6 shadow-md hover:shadow-lg transition-all text-lg">
+                  <Icon name="Phone" size={20} className="mr-2" />
                   +7 (939) 881-89-42
                 </Button>
               </a>
