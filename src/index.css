@@ -150,3 +150,17 @@
 .animate-fade-in-scale {
   animation: fade-in-scale 0.3s ease-out;
 }
+
+@keyframes arrow-move {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(4px);
+  }
+}
+
+.group:hover .animate-arrow {
+  animation: arrow-move 0.6s ease-in-out infinite;
+}
