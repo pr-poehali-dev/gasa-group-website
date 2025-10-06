@@ -703,6 +703,29 @@ const Index = () => {
           </div>
         </div>
       </footer>
+
+      <div className="fixed bottom-6 right-6 z-50 flex flex-col gap-3">
+        <a 
+          href="https://wa.me/79398818942" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          className="group"
+        >
+          <div className="w-14 h-14 bg-[#25D366] hover:bg-[#20BA5A] rounded-full flex items-center justify-center shadow-2xl transition-all hover:scale-110 cursor-pointer">
+            <Icon name="MessageCircle" className="text-white" size={28} />
+          </div>
+        </a>
+        <a 
+          href="https://t.me/+79398818942" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          className="group"
+        >
+          <div className="w-14 h-14 bg-[#0088cc] hover:bg-[#0077b5] rounded-full flex items-center justify-center shadow-2xl transition-all hover:scale-110 cursor-pointer">
+            <Icon name="Send" className="text-white" size={28} />
+          </div>
+        </a>
+      </div>
     </div>
   );
 };
