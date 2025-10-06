@@ -8,6 +8,7 @@ import Icon from '@/components/ui/icon';
 
 const Index = () => {
   const [selectedCategory, setSelectedCategory] = useState('all');
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const projects = [
     {
@@ -152,13 +153,93 @@ const Index = () => {
               <a href="#advantages" className="text-foreground/80 hover:text-foreground transition-colors font-medium">Преимущества</a>
               <a href="#contact" className="text-foreground/80 hover:text-foreground transition-colors font-medium">Контакты</a>
             </nav>
-            <Button className="bg-accent hover:bg-accent/90 text-accent-foreground rounded-full px-6 shadow-md hover:shadow-lg transition-all">
-              <Icon name="Phone" size={18} className="mr-2" />
-              Позвонить
-            </Button>
+            <div className="flex items-center gap-4">
+              <Button className="hidden md:flex bg-accent hover:bg-accent/90 text-accent-foreground rounded-full px-6 shadow-md hover:shadow-lg transition-all">
+                <Icon name="Phone" size={18} className="mr-2" />
+                Позвонить
+              </Button>
+              <Button 
+                variant="ghost" 
+                size="icon" 
+                className="md:hidden text-foreground"
+                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              >
+                <Icon name={mobileMenuOpen ? "X" : "Menu"} size={24} />
+              </Button>
+            </div>
           </div>
         </div>
       </header>
+
+      {mobileMenuOpen && (
+        <div className="fixed inset-0 z-40 bg-black/50 md:hidden" onClick={() => setMobileMenuOpen(false)}>
+          <div 
+            className="fixed right-0 top-0 h-full w-80 bg-white shadow-2xl transform transition-transform duration-300"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div className="p-6">
+              <div className="flex items-center justify-between mb-8">
+                <img 
+                  src="https://cdn.poehali.dev/files/16e58f4c-224d-4d3b-bca6-7092af1d374f.png" 
+                  alt="ГАСА ГРУПП" 
+                  className="h-12 w-auto"
+                />
+                <Button 
+                  variant="ghost" 
+                  size="icon"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  <Icon name="X" size={24} />
+                </Button>
+              </div>
+              <nav className="flex flex-col gap-6">
+                <a 
+                  href="#projects" 
+                  className="text-lg font-medium text-foreground hover:text-accent transition-colors"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  Проекты
+                </a>
+                <a 
+                  href="#portfolio" 
+                  className="text-lg font-medium text-foreground hover:text-accent transition-colors"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  Портфолио
+                </a>
+                <a 
+                  href="#services" 
+                  className="text-lg font-medium text-foreground hover:text-accent transition-colors"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  Услуги
+                </a>
+                <a 
+                  href="#advantages" 
+                  className="text-lg font-medium text-foreground hover:text-accent transition-colors"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  Преимущества
+                </a>
+                <a 
+                  href="#contact" 
+                  className="text-lg font-medium text-foreground hover:text-accent transition-colors"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  Контакты
+                </a>
+                <Button 
+                  className="mt-4 bg-accent hover:bg-accent/90 text-accent-foreground rounded-full w-full"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  <Icon name="Phone" size={18} className="mr-2" />
+                  Позвонить
+                </Button>
+              </nav>
+            </div>
+          </div>
+        </div>
+      )}
 
       <section className="pt-32 pb-20 bg-gradient-to-br from-accent/5 via-background to-muted/30">
         <div className="container mx-auto px-4">
