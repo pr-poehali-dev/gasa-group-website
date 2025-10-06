@@ -419,7 +419,7 @@ const Index = () => {
         </div>
       </section>
 
-      <section id="projects" className={`py-24 bg-muted/10 transition-all duration-1000 ${visibleSections.has('projects') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-20'}`}>
+      <section id="projects" className={`py-24 bg-muted/10 transition-all duration-1000 ${visibleSections.has('projects') ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-20'}`}>
         <div className="container mx-auto px-4">
           <div className="text-center mb-20 animate-fade-in">
             <Badge className="mb-6 bg-accent/20 text-accent border border-accent/30 px-4 py-2 text-sm font-medium rounded-full">Готовые решения</Badge>
@@ -492,7 +492,7 @@ const Index = () => {
         </div>
       </section>
 
-      <section id="portfolio" className={`py-24 bg-gradient-to-b from-background to-accent/5 transition-all duration-1000 ${visibleSections.has('portfolio') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-20'}`}>
+      <section id="portfolio" className={`py-24 bg-gradient-to-b from-background to-accent/5 transition-all duration-1000 ${visibleSections.has('portfolio') ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-20'}`}>
         <div className="container mx-auto px-4">
           <div className="text-center mb-20 animate-fade-in">
             <Badge className="mb-6 bg-accent/20 text-accent border border-accent/30 px-4 py-2 text-sm font-medium rounded-full">Истории счастливых семей</Badge>
@@ -547,7 +547,7 @@ const Index = () => {
         </div>
       </section>
 
-      <section id="services" className={`py-24 bg-muted/10 transition-all duration-1000 ${visibleSections.has('services') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-20'}`}>
+      <section id="services" className={`py-24 bg-muted/10 transition-all duration-1000 ${visibleSections.has('services') ? 'opacity-100 scale-100' : 'opacity-0 scale-95'}`}>
         <div className="container mx-auto px-4">
           <div className="text-center mb-20 animate-fade-in">
             <Badge className="mb-6 bg-accent/20 text-accent border border-accent/30 px-4 py-2 text-sm font-medium rounded-full">Наш путь к вашему дому</Badge>
@@ -575,7 +575,7 @@ const Index = () => {
         </div>
       </section>
 
-      <section id="about" className={`py-24 bg-gradient-to-br from-accent/10 via-accent/5 to-background transition-all duration-1000 ${visibleSections.has('about') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-20'}`}>
+      <section id="about" className={`py-24 bg-gradient-to-br from-accent/10 via-accent/5 to-background transition-all duration-1000 ${visibleSections.has('about') ? 'opacity-100 scale-100 rotate-0' : 'opacity-0 scale-90 -rotate-1'}`}>
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="animate-fade-in-up">
@@ -632,7 +632,7 @@ const Index = () => {
         </div>
       </section>
 
-      <section id="contact" className={`py-24 bg-gradient-to-b from-background to-accent/5 transition-all duration-1000 ${visibleSections.has('contact') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-20'}`}>
+      <section id="contact" className={`py-24 bg-gradient-to-b from-background to-accent/5 transition-all duration-1000 ${visibleSections.has('contact') ? 'opacity-100 translate-y-0 scale-100' : 'opacity-0 translate-y-10 scale-95'}`}>
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-16 animate-fade-in">
