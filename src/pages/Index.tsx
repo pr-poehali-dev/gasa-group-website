@@ -395,9 +395,7 @@ const Index = () => {
               variant={selectedCategory === 'cottage' ? 'default' : 'outline'}
               onClick={() => setSelectedCategory('cottage')}
               className={`rounded-full px-8 ${selectedCategory === 'cottage' ? 'bg-accent hover:bg-accent/90 text-accent-foreground shadow-md' : 'border-2 border-accent/30 hover:bg-accent/5'}`}
-            >
-              Коттеджи
-            </Button>
+            >Одноэтажные</Button>
             <Button 
               variant={selectedCategory === 'house' ? 'default' : 'outline'}
               onClick={() => setSelectedCategory('house')}
