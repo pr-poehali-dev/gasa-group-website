@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -19,6 +19,17 @@ const Index = () => {
     privacyConsent: false, 
     dataConsent: false 
   });
+  const [logoRotation, setLogoRotation] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrolled = window.scrollY;
+      setLogoRotation(scrolled * 0.2);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const projects = [
     {
@@ -153,7 +164,8 @@ const Index = () => {
               <img 
                 src="https://cdn.poehali.dev/files/ccefff1e-481b-4116-ad47-87e9d52af73b.png" 
                 alt="ГАСА ГРУПП" 
-                className="h-20 w-auto drop-shadow-lg transition-transform duration-300 hover:scale-110 cursor-pointer"
+                className="h-20 w-auto drop-shadow-lg transition-all duration-300 hover:scale-110 cursor-pointer"
+                style={{ transform: `rotate(${logoRotation}deg)` }}
                 onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
               />
             </div>
