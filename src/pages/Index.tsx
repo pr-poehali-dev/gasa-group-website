@@ -19,21 +19,9 @@ const Index = () => {
     privacyConsent: false, 
     dataConsent: false 
   });
-  const [logoRotation, setLogoRotation] = useState(0);
-  const [parallaxOffset, setParallaxOffset] = useState(0);
-  const [scrollBlur, setScrollBlur] = useState(0);
   const [visibleSections, setVisibleSections] = useState<Set<string>>(new Set());
 
   useEffect(() => {
-    const handleScroll = () => {
-      const scrolled = window.scrollY;
-      const rotation = (scrolled * 0.05) % 360;
-      const blur = Math.min(scrolled / 100, 8);
-      setLogoRotation(rotation);
-      setParallaxOffset(scrolled * 0.5);
-      setScrollBlur(blur);
-    };
-
     const observerOptions = {
       threshold: 0.1,
       rootMargin: '0px 0px -100px 0px'
@@ -50,9 +38,7 @@ const Index = () => {
     const sections = document.querySelectorAll('section[id]');
     sections.forEach(section => observer.observe(section));
 
-    window.addEventListener('scroll', handleScroll);
     return () => {
-      window.removeEventListener('scroll', handleScroll);
       sections.forEach(section => observer.unobserve(section));
     };
   }, []);
@@ -373,13 +359,9 @@ const Index = () => {
                   src="/img/7bd914ba-6370-4f05-b79b-f27333997911.jpg" 
                   alt="Строительство" 
                   className="w-full h-auto transition-all duration-700 group-hover:scale-110 group-hover:rotate-2"
-                  style={{ 
-                    transform: `translateY(${parallaxOffset * 0.3}px)`,
-                    filter: `blur(${scrollBlur * 0.3}px) brightness(${1 - scrollBlur * 0.05})`
-                  }}
                 />
                 <div className="absolute inset-0 bg-gradient-to-tr from-accent/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                <div className="absolute inset-0 bg-black transition-opacity duration-300" style={{ opacity: scrollBlur * 0.05 }}></div>
+
                 <div className="absolute top-6 right-6 bg-white/95 backdrop-blur-sm text-accent px-5 py-3 rounded-full flex items-center gap-2 shadow-lg border border-accent/20">
                   <Icon name="Video" size={18} />
                   <span className="text-sm font-semibold">LIVE</span>
@@ -394,10 +376,7 @@ const Index = () => {
         <div className="container mx-auto px-4">
           <div className={`text-center mb-20 transition-all duration-700 ${visibleSections.has('advantages') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
             <Badge className="mb-6 bg-accent/20 text-accent border border-accent/30 px-4 py-2 text-sm font-medium rounded-full">Почему нам доверяют семьи</Badge>
-            <h2 className="text-5xl md:text-6xl font-bold mb-6 text-foreground relative inline-block">
-              Наши ценности
-              <span className={`absolute bottom-0 left-0 h-1 bg-accent transition-all duration-1000 ${visibleSections.has('advantages') ? 'w-full' : 'w-0'}`} style={{ transitionDelay: '0.3s' }}></span>
-            </h2>
+            <h2 className="text-5xl md:text-6xl font-bold mb-6 text-foreground">Наши ценности</h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
               Мы строим не просто дома — мы создаём пространство для семейного тепла, уюта и счастья
             </p>
@@ -426,10 +405,7 @@ const Index = () => {
         <div className="container mx-auto px-4">
           <div className={`text-center mb-20 transition-all duration-700 ${visibleSections.has('projects') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
             <Badge className="mb-6 bg-accent/20 text-accent border border-accent/30 px-4 py-2 text-sm font-medium rounded-full">Готовые решения</Badge>
-            <h2 className="text-5xl md:text-6xl font-bold mb-6 text-foreground relative inline-block">
-              Проекты домов
-              <span className={`absolute bottom-0 left-0 h-1 bg-accent transition-all duration-1000 ${visibleSections.has('projects') ? 'w-full' : 'w-0'}`} style={{ transitionDelay: '0.3s' }}></span>
-            </h2>
+            <h2 className="text-5xl md:text-6xl font-bold mb-6 text-foreground">Проекты домов</h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
               Каждый проект продуман до мелочей для комфорта вашей семьи
             </p>
@@ -465,7 +441,6 @@ const Index = () => {
                     src={project.image} 
                     alt={project.title}
                     className="w-full h-72 object-cover transition-all duration-700 group-hover:scale-125 group-hover:rotate-3"
-                    style={{ transform: `translateY(${parallaxOffset * (0.1 + index * 0.02)}px)` }}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                   <div className="absolute inset-0 bg-accent/20 mix-blend-overlay opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
@@ -502,10 +477,7 @@ const Index = () => {
         <div className="container mx-auto px-4">
           <div className={`text-center mb-20 transition-all duration-700 ${visibleSections.has('portfolio') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
             <Badge className="mb-6 bg-accent/20 text-accent border border-accent/30 px-4 py-2 text-sm font-medium rounded-full">Истории счастливых семей</Badge>
-            <h2 className="text-5xl md:text-6xl font-bold mb-6 text-foreground relative inline-block">
-              Наши работы
-              <span className={`absolute bottom-0 left-0 h-1 bg-accent transition-all duration-1000 ${visibleSections.has('portfolio') ? 'w-full' : 'w-0'}`} style={{ transitionDelay: '0.3s' }}></span>
-            </h2>
+            <h2 className="text-5xl md:text-6xl font-bold mb-6 text-foreground">Наши работы</h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
               Более 120 семей уже нашли свой дом мечты вместе с нами
             </p>
@@ -522,7 +494,6 @@ const Index = () => {
                     src={item.image} 
                     alt={item.title}
                     className="w-full h-full object-cover transition-all duration-1000 group-hover:scale-125 group-hover:brightness-110"
-                    style={{ transform: `translateY(${parallaxOffset * (0.08 + index * 0.03)}px)` }}
                   />
                   <div className="absolute inset-0 bg-gradient-to-br from-accent/30 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                   <div className="absolute inset-0 bg-gradient-to-t from-accent/90 via-accent/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-8">
@@ -560,10 +531,7 @@ const Index = () => {
         <div className="container mx-auto px-4">
           <div className={`text-center mb-20 transition-all duration-700 ${visibleSections.has('services') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
             <Badge className="mb-6 bg-accent/20 text-accent border border-accent/30 px-4 py-2 text-sm font-medium rounded-full">Наш путь к вашему дому</Badge>
-            <h2 className="text-5xl md:text-6xl font-bold mb-6 text-foreground relative inline-block">
-              Этапы сотрудничества
-              <span className={`absolute bottom-0 left-0 h-1 bg-accent transition-all duration-1000 ${visibleSections.has('services') ? 'w-full' : 'w-0'}`} style={{ transitionDelay: '0.3s' }}></span>
-            </h2>
+            <h2 className="text-5xl md:text-6xl font-bold mb-6 text-foreground">Этапы сотрудничества</h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
               От первой встречи до радостного новоселья — мы рядом на каждом шагу
             </p>
@@ -592,10 +560,7 @@ const Index = () => {
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className={`transition-all duration-700 ${visibleSections.has('about') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
               <Badge className="mb-6 bg-accent/20 text-accent border border-accent/30 px-4 py-2 text-sm font-medium rounded-full">Наша история</Badge>
-              <h2 className="text-5xl md:text-6xl font-bold mb-8 text-foreground relative inline-block">
-                О компании ГАСА ГРУПП
-                <span className={`absolute bottom-0 left-0 h-1 bg-accent transition-all duration-1000 ${visibleSections.has('about') ? 'w-full' : 'w-0'}`} style={{ transitionDelay: '0.3s' }}></span>
-              </h2>
+              <h2 className="text-5xl md:text-6xl font-bold mb-8 text-foreground">О компании ГАСА ГРУПП</h2>
               <p className="text-xl text-muted-foreground mb-6 leading-relaxed">
                 Мы — команда единомышленников, для которых строительство дома — это создание пространства для семейного счастья. Мы верим в честность, качество и бережное отношение к каждому клиенту.
               </p>
@@ -622,24 +587,14 @@ const Index = () => {
                     src="/img/f6037ffa-29b7-40be-b601-9c4757b868d7.jpg" 
                     alt="Дом" 
                     className="w-full h-full object-cover transition-all duration-700 group-hover:scale-110 group-hover:-rotate-2"
-                    style={{ 
-                      transform: `translateY(${parallaxOffset * 0.2}px)`,
-                      filter: `blur(${scrollBlur * 0.2}px) brightness(${1 - scrollBlur * 0.04})`
-                    }}
                   />
-                  <div className="absolute inset-0 bg-black transition-opacity duration-300" style={{ opacity: scrollBlur * 0.04 }}></div>
                 </div>
                 <div className="group overflow-hidden rounded-3xl shadow-2xl mt-12 border-4 border-white/50 relative">
                   <img 
                     src="/img/e1169cc6-c6e3-4c1f-9502-35ffadb88586.jpg" 
                     alt="Коттедж" 
                     className="w-full h-full object-cover transition-all duration-700 group-hover:scale-110 group-hover:rotate-2"
-                    style={{ 
-                      transform: `translateY(${parallaxOffset * 0.15}px)`,
-                      filter: `blur(${scrollBlur * 0.15}px) brightness(${1 - scrollBlur * 0.03})`
-                    }}
                   />
-                  <div className="absolute inset-0 bg-black transition-opacity duration-300" style={{ opacity: scrollBlur * 0.03 }}></div>
                 </div>
               </div>
             </div>
@@ -652,10 +607,7 @@ const Index = () => {
           <div className="max-w-4xl mx-auto">
             <div className={`text-center mb-16 transition-all duration-700 ${visibleSections.has('contact') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
               <Badge className="mb-6 bg-accent/20 text-accent border border-accent/30 px-4 py-2 text-sm font-medium rounded-full">Свяжитесь с нами</Badge>
-              <h2 className="text-5xl md:text-6xl font-bold mb-6 text-foreground relative inline-block">
-                Начнём ваш путь
-                <span className={`absolute bottom-0 left-0 h-1 bg-accent transition-all duration-1000 ${visibleSections.has('contact') ? 'w-full' : 'w-0'}`} style={{ transitionDelay: '0.3s' }}></span>
-              </h2>
+              <h2 className="text-5xl md:text-6xl font-bold mb-6 text-foreground">Начнём ваш путь</h2>
               <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
                 Оставьте заявку, и мы с радостью поделимся своими знаниями и поможем создать дом вашей мечты
               </p>
