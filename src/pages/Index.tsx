@@ -156,16 +156,16 @@ const Index = () => {
                 className="h-16 w-auto"
               />
             </div>
-            <nav className="hidden md:flex items-center gap-8" style={{fontFamily: '"Prosto One", sans-serif'}}>
-              <a href="#projects" className="text-black hover:text-accent transition-colors font-medium text-lg">Проекты</a>
-              <a href="#portfolio" className="text-black hover:text-accent transition-colors font-medium text-lg">Портфолио</a>
-              <a href="#services" className="text-black hover:text-accent transition-colors font-medium text-lg">Услуги</a>
-              <a href="#advantages" className="text-black hover:text-accent transition-colors font-medium text-lg">Преимущества</a>
-              <a href="#contact" className="text-black hover:text-accent transition-colors font-medium text-lg">Контакты</a>
+            <nav className="hidden md:flex items-center gap-8" style={{fontFamily: '"TT Prosto Sans", sans-serif', fontWeight: 400}}>
+              <a href="#projects" className="text-black hover:text-accent transition-colors text-lg">Проекты</a>
+              <a href="#portfolio" className="text-black hover:text-accent transition-colors text-lg">Портфолио</a>
+              <a href="#services" className="text-black hover:text-accent transition-colors text-lg">Услуги</a>
+              <a href="#advantages" className="text-black hover:text-accent transition-colors text-lg">Преимущества</a>
+              <a href="#contact" className="text-black hover:text-accent transition-colors text-lg">Контакты</a>
             </nav>
             <div className="flex items-center gap-4">
               <a href="tel:+79398818942">
-                <Button className="hidden md:flex bg-accent hover:bg-accent/90 text-accent-foreground rounded-full px-6 shadow-md hover:shadow-lg transition-all text-base" style={{fontFamily: '"Prosto One", sans-serif'}}>
+                <Button className="hidden md:flex bg-accent hover:bg-accent/90 text-accent-foreground rounded-full px-6 shadow-md hover:shadow-lg transition-all text-base" style={{fontFamily: '"TT Prosto Sans", sans-serif', fontWeight: 400}}>
                   <Icon name="Phone" size={20} className="mr-2" />
                   Звонок
                 </Button>
