@@ -154,10 +154,12 @@ const Index = () => {
               <a href="#contact" className="text-foreground/80 hover:text-foreground transition-colors font-medium">Контакты</a>
             </nav>
             <div className="flex items-center gap-4">
-              <Button className="hidden md:flex bg-accent hover:bg-accent/90 text-accent-foreground rounded-full px-6 shadow-md hover:shadow-lg transition-all">
-                <Icon name="Phone" size={18} className="mr-2" />
-                Позвонить
-              </Button>
+              <a href="tel:+79398818942">
+                <Button className="hidden md:flex bg-accent hover:bg-accent/90 text-accent-foreground rounded-full px-6 shadow-md hover:shadow-lg transition-all">
+                  <Icon name="Phone" size={18} className="mr-2" />
+                  +7 (939) 881-89-42
+                </Button>
+              </a>
               <Button 
                 variant="ghost" 
                 size="icon" 
@@ -588,8 +590,9 @@ const Index = () => {
                     </div>
                     <div>
                       <h4 className="font-bold mb-2 text-lg text-foreground">Телефон</h4>
-                      <p className="text-muted-foreground font-medium">+7 (861) 123-45-67</p>
-                      <p className="text-muted-foreground font-medium">+7 (918) 987-65-43</p>
+                      <a href="tel:+79398818942" className="text-muted-foreground font-medium hover:text-accent transition-colors block">
+                        +7 (939) 881-89-42
+                      </a>
                     </div>
                   </CardContent>
                 </Card>
@@ -650,8 +653,8 @@ const Index = () => {
             <div>
               <h4 className="font-bold mb-4 text-foreground text-lg">Контакты</h4>
               <ul className="space-y-3 text-muted-foreground font-medium">
-                <li>+7 (861) 123-45-67</li>
-                <li>info@gasagroup.ru</li>
+                <li><a href="tel:+79398818942" className="hover:text-accent transition-colors">+7 (939) 881-89-42</a></li>
+                <li><a href="mailto:info@gasagroup.ru" className="hover:text-accent transition-colors">info@gasagroup.ru</a></li>
                 <li>г. Краснодар, ул. Красная, 176</li>
               </ul>
             </div>
