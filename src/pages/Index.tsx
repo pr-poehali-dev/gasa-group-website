@@ -342,13 +342,14 @@ const Index = () => {
                 </div>
               </div>
             </div>
-            <div className="relative animate-scale-in">
+            <div className="relative animate-scale-in group">
               <div className="relative rounded-3xl overflow-hidden shadow-2xl border-8 border-white/50">
                 <img 
                   src="/img/7bd914ba-6370-4f05-b79b-f27333997911.jpg" 
                   alt="Строительство" 
-                  className="w-full h-auto"
+                  className="w-full h-auto transition-all duration-700 group-hover:scale-110 group-hover:rotate-2"
                 />
+                <div className="absolute inset-0 bg-gradient-to-tr from-accent/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 <div className="absolute top-6 right-6 bg-white/95 backdrop-blur-sm text-accent px-5 py-3 rounded-full flex items-center gap-2 shadow-lg border border-accent/20">
                   <Icon name="Video" size={18} />
                   <span className="text-sm font-semibold">LIVE</span>
@@ -420,16 +421,17 @@ const Index = () => {
             {filteredProjects.map((project, index) => (
               <Card 
                 key={project.id} 
-                className="overflow-hidden group cursor-pointer hover:shadow-2xl transition-all duration-300 animate-scale-in bg-white border-2 border-accent/10 rounded-3xl"
+                className="overflow-hidden group cursor-pointer hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 animate-scale-in bg-white border-2 border-accent/10 rounded-3xl"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
                 <div className="relative overflow-hidden">
                   <img 
                     src={project.image} 
                     alt={project.title}
-                    className="w-full h-72 object-cover transition-transform duration-700 group-hover:scale-110"
+                    className="w-full h-72 object-cover transition-all duration-700 group-hover:scale-125 group-hover:rotate-3"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                  <div className="absolute inset-0 bg-accent/20 mix-blend-overlay opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                   <div className="absolute top-6 right-6 bg-white/95 backdrop-blur-sm text-accent px-5 py-2 rounded-full text-sm font-bold shadow-lg border border-accent/20">
                     {project.price}
                   </div>
@@ -472,15 +474,16 @@ const Index = () => {
             {portfolio.map((item, index) => (
               <Card 
                 key={index}
-                className="overflow-hidden group cursor-pointer hover:shadow-2xl transition-all duration-300 animate-fade-in bg-white border-2 border-accent/10 rounded-3xl"
+                className="overflow-hidden group cursor-pointer hover:shadow-2xl hover:-translate-y-3 transition-all duration-500 animate-fade-in bg-white border-2 border-accent/10 rounded-3xl"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
                 <div className="relative overflow-hidden h-80">
                   <img 
                     src={item.image} 
                     alt={item.title}
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                    className="w-full h-full object-cover transition-all duration-1000 group-hover:scale-125 group-hover:brightness-110"
                   />
+                  <div className="absolute inset-0 bg-gradient-to-br from-accent/30 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                   <div className="absolute inset-0 bg-gradient-to-t from-accent/90 via-accent/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-8">
                     <div className="text-white">
                       <h3 className="text-2xl font-bold mb-3">{item.title}</h3>
@@ -567,16 +570,19 @@ const Index = () => {
             </div>
             <div className="relative animate-scale-in">
               <div className="grid grid-cols-2 gap-6">
-                <img 
-                  src="/img/f6037ffa-29b7-40be-b601-9c4757b868d7.jpg" 
-                  alt="Дом" 
-                  className="rounded-3xl shadow-2xl border-4 border-white/50"
-                />
-                <img 
-                  src="/img/e1169cc6-c6e3-4c1f-9502-35ffadb88586.jpg" 
-                  alt="Коттедж" 
-                  className="rounded-3xl shadow-2xl mt-12 border-4 border-white/50"
-                />
+                <div className="group overflow-hidden rounded-3xl shadow-2xl border-4 border-white/50">
+                  <img 
+                    src="/img/f6037ffa-29b7-40be-b601-9c4757b868d7.jpg" 
+                    alt="Дом" 
+                    className="w-full h-full object-cover transition-all duration-700 group-hover:scale-110 group-hover:-rotate-2"
+                  />
+                </div>
+                <div className="group overflow-hidden rounded-3xl shadow-2xl mt-12 border-4 border-white/50">
+                  <img 
+                    src="/img/e1169cc6-c6e3-4c1f-9502-35ffadb88586.jpg" 
+                    alt="Коттедж" 
+                    className="w-full h-full object-cover transition-all duration-700 group-hover:scale-110 group-hover:rotate-2"
+                  />
               </div>
             </div>
           </div>
