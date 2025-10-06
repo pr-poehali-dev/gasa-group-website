@@ -914,6 +914,36 @@ const Index = () => {
           </div>
         </div>
       )}
+
+      {/* Footer */}
+      <footer className="bg-background/50 backdrop-blur-sm border-t border-accent/10 py-12 mt-32">
+        <div className="container mx-auto px-6">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-6">
+            <div className="text-center md:text-left">
+              <p className="text-muted-foreground text-sm">
+                © 2024 Консалтинговые услуги. Все права защищены.
+              </p>
+            </div>
+            
+            <div className="flex flex-wrap justify-center gap-6">
+              <Link 
+                to="/privacy" 
+                target="_blank"
+                className="text-sm text-muted-foreground hover:text-accent transition-colors underline hover:no-underline"
+              >
+                Политика конфиденциальности
+              </Link>
+              <Link 
+                to="/personal-data" 
+                target="_blank"
+                className="text-sm text-muted-foreground hover:text-accent transition-colors underline hover:no-underline"
+              >
+                Обработка персональных данных
+              </Link>
+            </div>
+          </div>
+        </div>
+      </footer>
     </div>
   );
 };
