@@ -432,6 +432,7 @@ const Index = () => {
                     src={project.image} 
                     alt={project.title}
                     className="w-full h-72 object-cover transition-all duration-700 group-hover:scale-125 group-hover:rotate-3"
+                    style={{ transform: `translateY(${parallaxOffset * (0.1 + index * 0.02)}px)` }}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                   <div className="absolute inset-0 bg-accent/20 mix-blend-overlay opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
@@ -485,6 +486,7 @@ const Index = () => {
                     src={item.image} 
                     alt={item.title}
                     className="w-full h-full object-cover transition-all duration-1000 group-hover:scale-125 group-hover:brightness-110"
+                    style={{ transform: `translateY(${parallaxOffset * (0.08 + index * 0.03)}px)` }}
                   />
                   <div className="absolute inset-0 bg-gradient-to-br from-accent/30 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                   <div className="absolute inset-0 bg-gradient-to-t from-accent/90 via-accent/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-8">
