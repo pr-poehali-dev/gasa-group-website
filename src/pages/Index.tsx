@@ -432,7 +432,10 @@ const Index = () => {
                       <span className="font-medium">{project.floors} этаж</span>
                     </div>
                   </div>
-                  <Button className="w-full bg-accent hover:bg-accent/90 text-accent-foreground rounded-full shadow-md hover:shadow-lg transition-all">
+                  <Button 
+                    onClick={() => setShowConsultForm(true)}
+                    className="w-full bg-accent hover:bg-accent/90 text-accent-foreground rounded-full shadow-md hover:shadow-lg transition-all"
+                  >
                     Подробнее
                   </Button>
                 </CardContent>
