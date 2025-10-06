@@ -714,8 +714,11 @@ const Index = () => {
           <div className="absolute right-16 top-1/2 -translate-y-1/2 bg-white px-4 py-2 rounded-full shadow-lg opacity-0 group-hover:opacity-100 transition-all duration-300 whitespace-nowrap pointer-events-none">
             <p className="text-sm font-medium text-foreground">Написать в WhatsApp</p>
           </div>
-          <div className="w-14 h-14 bg-[#25D366] hover:bg-[#20BA5A] rounded-full flex items-center justify-center shadow-2xl transition-all hover:scale-110 cursor-pointer animate-bounce-slow">
-            <Icon name="MessageCircle" className="text-white" size={28} />
+          <div className="relative">
+            <div className="absolute inset-0 bg-[#25D366] rounded-full animate-ping opacity-75"></div>
+            <div className="relative w-14 h-14 bg-[#25D366] hover:bg-[#20BA5A] rounded-full flex items-center justify-center shadow-2xl transition-all hover:scale-110 cursor-pointer animate-bounce-slow">
+              <Icon name="MessageCircle" className="text-white" size={28} />
+            </div>
           </div>
         </a>
         <a 
@@ -727,8 +730,11 @@ const Index = () => {
           <div className="absolute right-16 top-1/2 -translate-y-1/2 bg-white px-4 py-2 rounded-full shadow-lg opacity-0 group-hover:opacity-100 transition-all duration-300 whitespace-nowrap pointer-events-none">
             <p className="text-sm font-medium text-foreground">Написать в Telegram</p>
           </div>
-          <div className="w-14 h-14 bg-[#0088cc] hover:bg-[#0077b5] rounded-full flex items-center justify-center shadow-2xl transition-all hover:scale-110 cursor-pointer animate-bounce-slow" style={{ animationDelay: '0.2s' }}>
-            <Icon name="Send" className="text-white" size={28} />
+          <div className="relative">
+            <div className="absolute inset-0 bg-[#0088cc] rounded-full animate-ping opacity-75"></div>
+            <div className="relative w-14 h-14 bg-[#0088cc] hover:bg-[#0077b5] rounded-full flex items-center justify-center shadow-2xl transition-all hover:scale-110 cursor-pointer animate-bounce-slow" style={{ animationDelay: '0.2s' }}>
+              <Icon name="Send" className="text-white" size={28} />
+            </div>
           </div>
         </a>
       </div>
