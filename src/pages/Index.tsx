@@ -875,30 +875,30 @@ const Index = () => {
                 />
               </div>
               
-              <div className="space-y-3 pt-2">
-                <label className="flex items-start gap-3 cursor-pointer group">
+              <div className="space-y-4 pt-4">
+                <label className="flex items-start gap-4 cursor-pointer group p-4 rounded-xl border-2 border-accent/20 hover:border-accent/40 hover:bg-accent/5 transition-all">
                   <input
                     type="checkbox"
                     checked={consultData.privacyConsent}
                     onChange={(e) => setConsultData({ ...consultData, privacyConsent: e.target.checked })}
                     required
-                    className="mt-1 w-5 h-5 rounded border-2 border-accent/30 text-accent focus:ring-accent focus:ring-2 cursor-pointer"
+                    className="mt-0.5 w-6 h-6 rounded-md border-2 border-accent/50 text-accent focus:ring-accent focus:ring-2 cursor-pointer"
                   />
-                  <span className="text-sm text-muted-foreground group-hover:text-foreground transition-colors">
-                    Я согласен с <Link to="/privacy" target="_blank" className="text-accent underline hover:no-underline">политикой конфиденциальности</Link>
+                  <span className="text-sm text-foreground leading-relaxed">
+                    Я согласен с <Link to="/privacy" target="_blank" className="text-accent font-semibold underline hover:no-underline">политикой конфиденциальности</Link>
                   </span>
                 </label>
 
-                <label className="flex items-start gap-3 cursor-pointer group">
+                <label className="flex items-start gap-4 cursor-pointer group p-4 rounded-xl border-2 border-accent/20 hover:border-accent/40 hover:bg-accent/5 transition-all">
                   <input
                     type="checkbox"
                     checked={consultData.dataConsent}
                     onChange={(e) => setConsultData({ ...consultData, dataConsent: e.target.checked })}
                     required
-                    className="mt-1 w-5 h-5 rounded border-2 border-accent/30 text-accent focus:ring-accent focus:ring-2 cursor-pointer"
+                    className="mt-0.5 w-6 h-6 rounded-md border-2 border-accent/50 text-accent focus:ring-accent focus:ring-2 cursor-pointer"
                   />
-                  <span className="text-sm text-muted-foreground group-hover:text-foreground transition-colors">
-                    Я согласен на <Link to="/personal-data" target="_blank" className="text-accent underline hover:no-underline">обработку персональных данных</Link>
+                  <span className="text-sm text-foreground leading-relaxed">
+                    Я согласен на <Link to="/personal-data" target="_blank" className="text-accent font-semibold underline hover:no-underline">обработку персональных данных</Link>
                   </span>
                 </label>
               </div>
