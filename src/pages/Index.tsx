@@ -5,6 +5,7 @@ import { Badge } from '@/components/ui/badge';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import Icon from '@/components/ui/icon';
+import { Link } from 'react-router-dom';
 
 const Index = () => {
   const [selectedCategory, setSelectedCategory] = useState('all');
@@ -884,7 +885,7 @@ const Index = () => {
                     className="mt-1 w-5 h-5 rounded border-2 border-accent/30 text-accent focus:ring-accent focus:ring-2 cursor-pointer"
                   />
                   <span className="text-sm text-muted-foreground group-hover:text-foreground transition-colors">
-                    Я согласен с <a href="#" className="text-accent underline hover:no-underline">политикой конфиденциальности</a>
+                    Я согласен с <Link to="/privacy" target="_blank" className="text-accent underline hover:no-underline">политикой конфиденциальности</Link>
                   </span>
                 </label>
 
@@ -897,7 +898,7 @@ const Index = () => {
                     className="mt-1 w-5 h-5 rounded border-2 border-accent/30 text-accent focus:ring-accent focus:ring-2 cursor-pointer"
                   />
                   <span className="text-sm text-muted-foreground group-hover:text-foreground transition-colors">
-                    Я согласен на <a href="#" className="text-accent underline hover:no-underline">обработку персональных данных</a>
+                    Я согласен на <Link to="/personal-data" target="_blank" className="text-accent underline hover:no-underline">обработку персональных данных</Link>
                   </span>
                 </label>
               </div>
