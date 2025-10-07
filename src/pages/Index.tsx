@@ -176,8 +176,7 @@ const Index = () => {
               <img 
                 src="https://cdn.poehali.dev/files/ccefff1e-481b-4116-ad47-87e9d52af73b.png" 
                 alt="ГАСА ГРУПП" 
-                className="h-20 w-auto drop-shadow-lg hover:scale-110 cursor-pointer"
-                style={{ transform: `rotate(${logoRotation}deg)`, transition: 'transform 0.1s ease-out' }}
+                className="h-20 w-auto drop-shadow-lg hover:scale-110 cursor-pointer transition-transform"
                 onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
               />
             </div>
